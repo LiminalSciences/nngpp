@@ -13,6 +13,9 @@ find_package(nng)
 file(GLOB_RECURSE includes include/*.h)
 
 add_library(nngpp INTERFACE)
+# create alias with exported name for including via find_package or FetchContent
+add_library(nng::nngpp ALIAS nngpp)
+
 target_include_directories(nngpp INTERFACE $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 target_link_libraries(nngpp INTERFACE nng)
 
