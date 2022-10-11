@@ -14,7 +14,7 @@ file(GLOB_RECURSE includes include/*.h)
 
 add_library(nngpp INTERFACE)
 target_include_directories(nngpp INTERFACE $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
-target_link_libraries(nngpp INTERFACE nng::nng)
+target_link_libraries(nngpp INTERFACE nng)
 
 if (NNGPP_BUILD_DEMOS)
     add_subdirectory(demo)
